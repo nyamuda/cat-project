@@ -9,7 +9,7 @@
 					<mdb-view hover>
 						<a href="#!">
 					<!--		<img :src="cat.url" alt="Card image cap" class="cat-img"> -->
-          <img :src="cat.url" alt="thumbnail" class="img-thumbnail"
+          <img :src="cat.url" alt="thumbnail" class="img-thumbnail cat-img"
   style="width: 500px">
 							<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
 						</a>
@@ -18,7 +18,7 @@
 						<mdb-card-title>Cat {{index+1}} </mdb-card-title>
 						<mdb-card-text>Some quick example text to build on the card title and make up the bulk of the
 							card's content.</mdb-card-text>
-						<mdb-btn color="primary">Read more</mdb-btn>
+						<mdb-btn :id="cat.id" color="primary">Read more</mdb-btn>
 					</mdb-card-body>
 				</mdb-card>
 			</mdb-card-group>
@@ -91,10 +91,6 @@ export default {
   position: relative;
 }
 .cat-img {
-  max-width:20rem;
-  height:auto;
-  position: relative;
-  margin: auto;
   object-fit: cover;
 }
 </style>
