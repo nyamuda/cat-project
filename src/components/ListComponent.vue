@@ -5,15 +5,17 @@
 	<mdb-container>
 		<mdb-row>
 			<mdb-card-group deck>
-				<mdb-card>
+				<mdb-card id="test">
 					<mdb-view hover>
 						<a href="#!">
-							<img :src="cat.url" alt="Card image cap" class="cat-img">
+					<!--		<img :src="cat.url" alt="Card image cap" class="cat-img"> -->
+          <img :src="cat.url" alt="thumbnail" class="img-thumbnail"
+  style="width: 500px">
 							<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
 						</a>
 					</mdb-view>
 					<mdb-card-body>
-						<mdb-card-title>Cat {{ index+1 }} </mdb-card-title>
+						<mdb-card-title>Cat {{index+1}} </mdb-card-title>
 						<mdb-card-text>Some quick example text to build on the card title and make up the bulk of the
 							card's content.</mdb-card-text>
 						<mdb-btn color="primary">Read more</mdb-btn>
@@ -68,6 +70,12 @@ export default {
 </script>
 
 <style scoped>
+#test {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
 #cat-list {
   width:90%;
   display: flex;
@@ -79,7 +87,7 @@ export default {
   flex-grow: inherit;
 }
 .my-cards {
-  max-width: 20rem;
+  width: 40rem;
   position: relative;
 }
 .cat-img {
