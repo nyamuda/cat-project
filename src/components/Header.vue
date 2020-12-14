@@ -13,7 +13,8 @@
     :interval="8000"
     slide
     :items="items"
-    controlls
+     indicators
+    id="coro-text"
   >
   </mdb-carousel>
 
@@ -36,13 +37,21 @@ import { mdbNavbar, mdbNavbarBrand,mdbCarousel} from 'mdbvue';
         items: [
           {
             img: true,
+            mask: "black-strong",
             src:
-              "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
+              "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png",
+              caption: {
+        text: "“There are two means of refuge from the miseries of life: music and cats.” – Albert Schweitzer",
+    }
           },
           {
             img: true,
+            mask: "black-strong",
             src:
-              "https://api.time.com/wp-content/uploads/2015/02/cats.jpg?quality=85&w=1024&h=512&crop=1"
+              "https://api.time.com/wp-content/uploads/2015/02/cats.jpg?quality=85&w=1024&h=512&crop=1",
+              caption: {
+        text: "“I have studied many philosophers and many cats. The wisdom of cats is infinitely superior.” – Hippolyte Taine",
+    }
           },
         ]
       };
@@ -51,6 +60,8 @@ import { mdbNavbar, mdbNavbarBrand,mdbCarousel} from 'mdbvue';
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 #nav-bar {
     color:#ffffff;
 }
@@ -59,6 +70,11 @@ import { mdbNavbar, mdbNavbarBrand,mdbCarousel} from 'mdbvue';
     position: relative;
     margin: auto;
     border: 1px solid;
+
+}
+#coro-text {
+  font-size: 2.5rem;
+  font-family: 'Ubuntu', sans-serif;
 
 }
 </style>

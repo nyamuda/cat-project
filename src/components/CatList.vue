@@ -85,6 +85,9 @@ export default {
   align-items: center;
   row-gap: 1rem;
   flex-grow: inherit;
+  margin-top: 8rem;
+margin-bottom: 3rem;
+
 }
 .my-cards {
   width: 40rem;
@@ -92,5 +95,6 @@ export default {
 }
 .cat-img {
   object-fit: cover;
+  padding: 1rem;
 }
 </style>

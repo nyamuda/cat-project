@@ -1,6 +1,8 @@
 <template>
   <div id="">
     <cat-header></cat-header>
+
+    <h1>Cats - sassy and adorbale at the same time. Look at our colourful collection of cat pictures capture the amazing-ness of cats.</h1>
     <cat-list></cat-list>
     <cat-footer></cat-footer>
   </div>
@@ -23,6 +25,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+h1 {
+  width: 80%;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  top: 3rem;
+}
 
 </style>
