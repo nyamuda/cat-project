@@ -80,22 +80,6 @@
         </div>
         <!--Grid row-->
       </div>
-      <div class="row d-flex justify-content-center">
-        <!--Grid column-->
-        <div class="col-md-6">
-          <!-- Video -->
-          <div class="embed-responsive embed-responsive-16by9 mb-4">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/WsDKTTnqMOM"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </div>
 
       <!-- Footer Elements -->
 
@@ -112,23 +96,23 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: "Footer2",
   components: {},
   data() {
     return {
       imageLinks: {
         image1:
-          "https://images.newscientist.com/wp-content/uploads/2020/10/28112526/shutterstock_1105090019_web.jpg",
+          "https://cdn.pixabay.com/photo/2020/10/01/11/41/cat-5618328_960_720.jpg",
         image2:
-          "https://photos.smugmug.com/SDZoo-WAP/San-Diego-Zoo-Feb-5-2017/i-rJnpbMN/0/L/DSC_3412-L.jpg",
+          "https://images.pexels.com/photos/1323326/cat-pet-pussy-animal-1323326.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         image3:
-          "https://cdn.pixabay.com/photo/2017/12/09/21/33/sunset-3008779_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2014/10/01/10/46/cat-468232_960_720.jpg",
         image4:
-          "https://cdn.pixabay.com/photo/2017/03/27/14/09/animal-2178983_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_960_720.jpg",
         image5:
-          "https://cdn.pixabay.com/photo/2017/04/02/11/11/cat-2195538_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2020/07/11/16/16/cat-5394567_960_720.jpg",
         image6:
-          "https://cdn.pixabay.com/photo/2017/11/14/13/06/kitty-2948404_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2015/05/22/05/52/cat-778315_960_720.jpg",
       },
     };
   },

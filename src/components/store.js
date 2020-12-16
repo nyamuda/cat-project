@@ -9,17 +9,18 @@ export const store = new Vuex.Store({
         myLoaderStatus: "",
         catInformation: "",
         allCatsData: "",
+        secondFooter: {},
     },
 
     getters: {
         //getting the cat state
-        getCats: state => {
+        getCats: (state) => {
             return state.allCatsData;
         },
         //getting the loader state
-        getLoad: state => {
-            return state.myLoaderStatus
-        }
+        getLoad: (state) => {
+            return state.myLoaderStatus;
+        },
     },
     mutations: {
         //this mutation will mutate the allCatsData property in the state
@@ -32,12 +33,12 @@ export const store = new Vuex.Store({
         },
         //this mututation will mutate the catInformation property in the state
         saveClickedCat: (state, payload) => {
-            state.catInformation = payload
+            state.catInformation = payload;
         },
         //change the state of myLoaaderStatus property
         loader: (state, payload) => {
             state.myLoaderStatus = payload;
-        }
+        },
     },
 
     actions: {
@@ -63,11 +64,11 @@ export const store = new Vuex.Store({
         },
         //the action for the saveClikedCat mutation --purpose is to store cat data to the state
         clickedCat: (context, payload) => {
-            context.commit('saveClickedCat', payload)
+            context.commit("saveClickedCat", payload);
         },
-        //the action for the loader mutation --purpose is to active/deactive the loader
+        //the action for the loader mutation --purpose is to activate/deactivate the loader
         loader: (context, payload) => {
-            context.commit('loader', payload)
-        }
+            context.commit("loader", payload);
+        },
     },
 });

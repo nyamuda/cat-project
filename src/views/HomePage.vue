@@ -4,8 +4,9 @@
 
     <h1>
       Cats - sassy and adorbale at the same time. Look at our colourful
-      collection of cat pictures and capture the amazing-ness of cats. From fluffy
-      cats to short-haired tabbies, this collection is just a one big "awww."
+      collection of cat pictures and capture the amazing-ness of cats. From
+      fluffy cats to short-haired tabbies, this collection is just a one big
+      "awww."
     </h1>
     <cat-list></cat-list>
     <cat-footer></cat-footer>
@@ -32,12 +33,24 @@ export default {
 
 <style scoped>
 h1 {
-  width: 80%;
+  width: 90%;
   position: relative;
   text-align: center;
   margin: auto;
   top: 3rem;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   color: #c31432;
+}
+
+@media (min-width: 480px) {
+  h1 {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    width: 60%;
+  }
 }
 </style>

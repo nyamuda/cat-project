@@ -16,15 +16,11 @@
               ><h3>{{ catName }}</h3></mdb-card-title
             >
             <mdb-card-text id="cat-descri">{{ catDescription }}</mdb-card-text>
-            <img
-              id="icon"
-              src="https://img.icons8.com/carbon-copy/100/000000/low-volume.png"
-            />
             <figure>
-              <figcaption>Listen to the T-Rex:</figcaption>
+              <figcaption>Listen to the Cutie Cat</figcaption>
               <audio
                 controls
-                src="src\assets\audio\audio_hero_Cat_DIGIC08-69.mp3"
+                src="http://www.sorrygottago.com/SoundFiles/cat.mp3"
                 type="audio/mp3"
               >
                 Your browser does not support the
@@ -35,10 +31,12 @@
         </mdb-card>
       </mdb-row>
     </mdb-container>
+    <cat-footer2></cat-footer2>
   </div>
 </template>
 
 <script>
+import Footer2 from "@/components/Footer2.vue";
 import {
   mdbContainer,
   mdbRow,
@@ -60,6 +58,7 @@ export default {
     mdbCardText,
     mdbView,
     mdbMask,
+    "cat-footer2": Footer2,
   },
   data() {
     return {
@@ -84,6 +83,7 @@ export default {
   width: 100%;
   position: relative;
   top: 2rem;
+  margin: auto;
 }
 #card-container {
   position: relative;
@@ -95,7 +95,7 @@ export default {
 
 #cat-cute {
   object-fit: cover;
-  width: 20rem;
+  width: 12rem;
   height: auto;
   position: relative;
   margin: auto;
@@ -109,13 +109,35 @@ export default {
 #cat-descri {
   font-size: 1rem;
 }
-
-/*Icon */
-#icon {
-  width: 3rem;
-  cursor: pointer;
+audio {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }
-#icon:hover {
-  color: red;
+
+@media (min-width: 320px) {
+  audio {
+    width: 90%;
+  }
+  #cat-cute {
+    width: 15rem;
+  }
+}
+
+@media (min-width: 480px) {
+  #cat-cute {
+    width: 20rem;
+  }
+}
+
+@media (min-width: 768px) {
+  audio {
+    width: 40%;
+  }
+  #card-container {
+    width: 60%;
+  }
 }
 </style>

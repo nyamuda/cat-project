@@ -21,7 +21,7 @@
               </mdb-view>
               <mdb-card-body>
                 <mdb-card-title>Cat {{ index + 1 }} </mdb-card-title>
-                <mdb-card-text
+                <mdb-card-text style="font-size:1rem"
                   >This is the image for cat {{ index + 1 }}. So intelligent,
                   family-friendly,and crazy cute.</mdb-card-text
                 >
@@ -67,8 +67,7 @@ export default {
     mdbMask,
   },
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     viewCat(event) {
@@ -89,19 +88,17 @@ export default {
       };
 
       //triggering the clickedCat action and passing in the data for the clicked cat--to it to the state
-      this.$store.dispatch('clickedCat',catObj)
+      this.$store.dispatch("clickedCat", catObj);
 
       //navigating to the cat view component
       this.$router.push(`/cat/${event.target.id}`);
     },
-
-  
   },
   computed: {
     catsData() {
       //extracting the fetched data(API request) from the state
       return this.$store.getters.getCats;
-      },
+    },
   },
 
   created() {
@@ -109,52 +106,12 @@ export default {
     this.$store.dispatch("fetchCatsData");
 
     //triggering the loader action--to show the loader
-    this.$store.dispatch('loader',true)
-
+    this.$store.dispatch("loader", true);
   },
 };
 </script>
 
 <style scoped>
-/*
-#test {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-#cat-list {
-  width:90%;
-  display: flex;
-  flex-direction:column;
-  position: relative;
-  margin: auto;
-  align-items: center;
-  row-gap: 1rem;
-  flex-grow: inherit;
-  margin-top: 8rem;
-margin-bottom: 3rem;
-
-}
-
-#cat-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 100%;
-  position: relative;
-  margin: auto;
-  border: 1px solid red;
-  row-gap: 1rem;
-}
-*/
-
-/*
-.my-cards {
-  width: 40rem;
-  position: relative;
-}
-*/
 #cat-list {
   display: flex;
   flex-direction: row;
