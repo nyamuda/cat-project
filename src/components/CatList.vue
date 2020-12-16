@@ -22,10 +22,12 @@
               <mdb-card-body>
                 <mdb-card-title>Cat {{ index + 1 }} </mdb-card-title>
                 <mdb-card-text
-                  >Some quick example text to build on the card title and make
-                  up the bulk of the card's content.</mdb-card-text
+                  >This is the image for cat {{ index + 1 }}. So intelligent,
+                  family-friendly,and crazy cute.</mdb-card-text
                 >
-                <mdb-btn :id="cat.id" color="primary" @click="viewCat"
+                <!--using a hidden input element to store the img url -->
+                <input type="hidden" :value="cat.url" />
+                <mdb-btn :id="cat.id" color="unique" @click="viewCat"
                   >Read more</mdb-btn
                 >
               </mdb-card-body>
@@ -38,8 +40,6 @@
 </template>
 
 <script>
-import { eventBus } from "../main";
-import axios from "axios";
 import {
   mdbContainer,
   mdbRow,
@@ -68,66 +68,60 @@ export default {
   },
   data() {
     return {
-      catsData: "",
-      catObj: "",
     };
   },
   methods: {
     viewCat(event) {
-      //getting the title and description of the cat/item from the elements
-     // let allElements = event.target.parentElement.children;
-    //  let itemTitle = [...allElements][0].innerHTML;
-    //  let itemDescription = [...allElements][1].innerHTML;
+      //getting the title and description of the clicked cat/item from the elements
+      let allElements = event.target.parentElement.children;
+      let itemTitle = [...allElements][0].innerHTML;
+      let itemDescription = [...allElements][1].innerHTML;
+      //getting the img URL which was saved as a value for a hidden input element
+      let imgURL = [...allElements][2].value;
 
-    //  this.catObj = [itemTitle, itemDescription];
+      console.log(imgURL);
 
-      //passing in the data to the cat view compononent
-      eventBus.$emit("catView", 'tatenda');
+      //storing the cat image, title and description as an object
+      let catObj = {
+        title: itemTitle,
+        description: itemDescription,
+        imgLocation: imgURL,
+      };
+
+      //triggering the clickedCat action and passing in the data for the clicked cat--to it to the state
+      this.$store.dispatch('clickedCat',catObj)
 
       //navigating to the cat view component
       this.$router.push(`/cat/${event.target.id}`);
     },
 
-    // a method that will either activate or diactivate the loader component
-    /*
-    activateLoader() {
-      eventBus.$emit("myLoader", true);
-    },
-    diactivateLoader() {
-      eventBus.$emit("myLoader", false);
-    },
-    */
+  
   },
+  computed: {
+    catsData() {
+      //extracting the fetched data(API request) from the state
+      return this.$store.getters.getCats;
+      },
+  },
+
   created() {
-    //showing the loader before the API request results are fetched
-    //this.activateLoader();
+    //triggering the fetchCatsData action--to make an API request
+    this.$store.dispatch("fetchCatsData");
 
-    //fetching data
-    let catsURL =
-      "https://thecatapi.com/api/images/get?format=json&results_per_page=6&size=small&type=png";
-    axios
-      .get(catsURL)
-      .then((response) => {
-        console.log(response.data);
-        this.catsData = response.data;
+    //triggering the loader action--to show the loader
+    this.$store.dispatch('loader',true)
 
-        //disable the loader
-       // this.diactivateLoader();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   },
 };
 </script>
 
 <style scoped>
+/*
 #test {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-/*
 #cat-list {
   width:90%;
   display: flex;
@@ -141,7 +135,7 @@ export default {
 margin-bottom: 3rem;
 
 }
-*/
+
 #cat-list {
   display: flex;
   flex-direction: row;
@@ -153,15 +147,38 @@ margin-bottom: 3rem;
   border: 1px solid red;
   row-gap: 1rem;
 }
+*/
+
 /*
 .my-cards {
   width: 40rem;
   position: relative;
 }
 */
-.my-cards {
-  width: 40rem;
+#cat-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 95%;
+  position: relative;
+  margin: auto;
+  row-gap: 1rem;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
 }
+.cat-img {
+  object-fit: cover;
+  height: 200px;
+  position: relative;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.my-cards {
+  width: 300px;
+}
+/*
 .cat-img {
   object-fit: cover;
   padding: 1rem;
@@ -169,4 +186,5 @@ margin-bottom: 3rem;
   height: 200px;
   background-size: cover;
 }
+*/
 </style>

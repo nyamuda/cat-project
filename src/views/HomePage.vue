@@ -2,7 +2,11 @@
   <div id="">
     <cat-header></cat-header>
 
-    <h1>Cats - sassy and adorbale at the same time. Look at our colourful collection of cat pictures capture the amazing-ness of cats.</h1>
+    <h1>
+      Cats - sassy and adorbale at the same time. Look at our colourful
+      collection of cat pictures and capture the amazing-ness of cats. From fluffy
+      cats to short-haired tabbies, this collection is just a one big "awww."
+    </h1>
     <cat-list></cat-list>
     <cat-footer></cat-footer>
     <Loader></Loader>
@@ -10,22 +14,20 @@
 </template>
 
 <script>
-
-import CatList from '@/components/CatList.vue';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
-import Loader from '@/components/Loader.vue';
-
+import CatList from "@/components/CatList.vue";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import Loader from "@/components/Loader.vue";
 
 export default {
-  name: 'HomePage',
+  name: "HomePage",
   components: {
     Loader,
-    "cat-list":CatList,
-    "cat-header":Header,
-    "cat-footer":Footer,
-  }
-}
+    "cat-list": CatList,
+    "cat-header": Header,
+    "cat-footer": Footer,
+  },
+};
 </script>
 
 <style scoped>
@@ -35,6 +37,7 @@ h1 {
   text-align: center;
   margin: auto;
   top: 3rem;
+  font-family: 'Ubuntu', sans-serif;
+  color: #c31432;
 }
-
 </style>
