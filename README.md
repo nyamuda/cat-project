@@ -5,7 +5,7 @@
       
 <h4>2. Go to the project folder </h4>
       <code>cd cat-project</code>
-      
+      <p>If the name of the branch is not master, switch to the master branch: <code>git checkout master</code></p> 
 <h4>3. Install all the packages</h4>
       <code>npm install</code>
       
