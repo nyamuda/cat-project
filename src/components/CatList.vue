@@ -14,7 +14,6 @@
                       class="img-thumbnail cat-img"
                     />
                   </div>
-                  <!--		<img :src="cat.url" alt="Card image cap" class="cat-img"> -->
 
                   <mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
                 </a>
@@ -87,7 +86,7 @@ export default {
         imgLocation: imgURL,
       };
 
-      //triggering the clickedCat action and passing in the data for the clicked cat--to it to the state
+      //triggering the clickedCat action and passing in the data for the clicked cat--saving it to the state
       this.$store.dispatch("clickedCat", catObj);
 
       //navigating to the cat view component
@@ -135,13 +134,5 @@ export default {
 .my-cards {
   width: 300px;
 }
-/*
-.cat-img {
-  object-fit: cover;
-  padding: 1rem;
-  width: 400px;
-  height: 200px;
-  background-size: cover;
-}
-*/
+
 </style>

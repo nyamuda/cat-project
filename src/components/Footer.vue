@@ -120,7 +120,7 @@ export default {
         image1:
           "https://images.newscientist.com/wp-content/uploads/2020/10/28112526/shutterstock_1105090019_web.jpg",
         image2:
-          "https://photos.smugmug.com/SDZoo-WAP/San-Diego-Zoo-Feb-5-2017/i-rJnpbMN/0/L/DSC_3412-L.jpg",
+          "https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720_960_720.jpg",
         image3:
           "https://cdn.pixabay.com/photo/2017/12/09/21/33/sunset-3008779_960_720.jpg",
         image4:

@@ -1,3 +1,4 @@
+//State Management for the App
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
@@ -9,7 +10,6 @@ export const store = new Vuex.Store({
         myLoaderStatus: "",
         catInformation: "",
         allCatsData: "",
-        secondFooter: {},
     },
 
     getters: {

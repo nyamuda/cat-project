@@ -12,7 +12,7 @@
 </template>
 
 <script>
-//import {eventBus} from '../main'
+
 // Import component
 import Loading from "vue-loading-overlay";
 // Import stylesheet
@@ -22,7 +22,7 @@ export default {
   name: "Loader",
   data() {
     return {
-      //isLoading:false,
+     
       fullPage: true,
       color: "rgb(135,28,107)",
       loader: "dots",

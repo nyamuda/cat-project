@@ -31,12 +31,22 @@
         </mdb-card>
       </mdb-row>
     </mdb-container>
+    <div id="slider-container">
+      <p id="facts-title">Amazing facts about cats</p>
+      <p id="think-cat">
+        Thinking of getting a cat? Here are some of the interesting facts about
+        cats you should know.
+      </p>
+
+      <Slider></Slider>
+    </div>
     <cat-footer2></cat-footer2>
   </div>
 </template>
 
 <script>
 import Footer2 from "@/components/Footer2.vue";
+import Slider from "@/components/Slider.vue";
 import {
   mdbContainer,
   mdbRow,
@@ -50,6 +60,7 @@ import {
 export default {
   name: "CatView",
   components: {
+    Slider,
     mdbContainer,
     mdbRow,
     mdbCard,
@@ -79,6 +90,19 @@ export default {
 };
 </script>
 <style>
+#facts-title {
+  font-size: 2rem;
+}
+#think-cat {
+  font-size: 1.2rem;
+}
+#slider-container {
+  width: 90%;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10rem;
+}
 #cat-body {
   width: 100%;
   position: relative;
@@ -90,7 +114,7 @@ export default {
   top: 5rem;
   margin: auto;
   width: 100%;
-  margin-bottom: 13rem;
+  margin-bottom: 10rem;
 }
 
 #cat-cute {
