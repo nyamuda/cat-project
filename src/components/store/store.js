@@ -45,7 +45,7 @@ export const store = new Vuex.Store({
         //making our API request using the fetchCatsData action.
         fetchCatsData: (context) => {
             let catsURL =
-                "https://thecatapi.com/api/images/get?format=json&results_per_page=6&size=small&type=png";
+                "https://thecatapi.com/api/images/get?format=json&results_per_page=100&size=small&type=png";
             axios
                 .get(catsURL)
                 .then((response) => {

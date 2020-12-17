@@ -99,12 +99,12 @@
 
       <!-- Footer Elements -->
 
-      <!-- Copyright -->
+      <!-- Developer -->
       <div class="footer-copyright text-center py-3">
-        © 2020 Copyright:
+        Developed by:
         <a href="percenyamuda.netlify.app">Pierce Nyamuda</a>
       </div>
-      <!-- Copyright -->
+      <!-- Developer -->
     </footer>
     <!-- Footer -->
   </div>
