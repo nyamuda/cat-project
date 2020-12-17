@@ -21,7 +21,7 @@
               <audio
                 controls
                 src="http://www.sorrygottago.com/SoundFiles/cat.mp3"
-                type="audio/mp3"
+                type="audio/mpeg"
               >
                 Your browser does not support the
                 <code>audio</code> element.
